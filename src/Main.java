@@ -24,15 +24,25 @@ public class Main {
         VariaveisGlobais.GRAFO = new Grafo();
 
         for (Cliente i : listaClientes){
-            Grafo.Vertice v = VariaveisGlobais.GRAFO.adicionaVertice(i.getNome(), i.getCarga(), i.getDinheiro());
+            Grafo.Vertice v = VariaveisGlobais.GRAFO.adicionaVertice(i.getNome(), i.getCarga(), i.getDinheiro(), "cliente");
         }
         for (Caminhao i : listaCaminhoes){
-            Grafo.Vertice v = VariaveisGlobais.GRAFO.adicionaVertice(i.getNome(), i.tamanho, i.getValor());
+            Grafo.Vertice v = VariaveisGlobais.GRAFO.adicionaVertice(i.getNome(), i.tamanho, i.getValor(), "caminhao");
+        }
+        geraLigacoes(VariaveisGlobais.GRAFO);
+    }
+
+    private static void geraLigacoes(Grafo grafo) {
+
+        System.out.println(grafo.vertices);
+        for (Grafo.Vertice v1 : grafo.vertices){
+
+            for (Grafo.Vertice v2 : grafo.vertices){
+                
+            }
         }
 
     }
-
-
 
     /**
      * Metodo que le linha por linha os dados de um arquivo

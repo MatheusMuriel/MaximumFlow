@@ -8,8 +8,9 @@ public class Grafo {
         arestas = new ArrayList<Aresta>();
     }
 
-    protected Vertice adicionaVertice(String nome, int peso, int valor){
-        Vertice v = new Vertice(nome, peso, valor);
+    protected Vertice adicionaVertice(String nome, int peso, int valor, String tipo){
+        tiposVertices _tipo = tiposVertices.valueOf(tipo);
+        Vertice v = new Vertice(nome, peso, valor, _tipo);
         vertices.add(v);
         return v;
     }
@@ -42,12 +43,14 @@ public class Grafo {
         String nome;
         int peso;
         int valor;
+        tiposVertices tipo;
         List<Aresta> ligacoes;
 
-        Vertice(String nome, int peso, int valor){
+        Vertice(String nome, int peso, int valor, tiposVertices tipo){
             this.nome = nome;
             this.peso = peso;
             this.valor = valor;
+            this.tipo = tipo;
             this.ligacoes = new ArrayList<Aresta>();
         }
 
@@ -65,5 +68,8 @@ public class Grafo {
             this.destino = destino;
         }
 
+    }
+    public enum tiposVertices {
+        cliente, caminhao;
     }
 }
