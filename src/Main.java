@@ -9,9 +9,6 @@ public class Main {
     public static void main(String[] args) {
         File arquivoDeEntrada = new File("input.txt");
         ReadFile(arquivoDeEntrada);
-
-        System.out.println(VariaveisGlobais.listaClientes + "" + VariaveisGlobais.listaCaminhoes);
-
     }
 
     /**
@@ -73,26 +70,6 @@ public class Main {
                 Caminhao cAux = new Caminhao(tamanho, valor, nome);
                 VariaveisGlobais.listaCaminhoes.add(cAux);
             }
-
-            //Percorre os clientes
-//            for (int i = 1; i < VariaveisGlobais.QUANT_CLIENTES; i++){
-//                int indiceEspaco = linha.indexOf(' ');
-//                int carga = Integer.valueOf(linha.substring(0,indiceEspaco));
-//                int dinheiro = Integer.valueOf(linha.substring(indiceEspaco+1));
-//                String nome = "Cliente" + i;
-//                Cliente cAux = new Cliente(carga, dinheiro, nome);
-//                VariaveisGlobais.listaClientes.add(cAux);
-//            }
-
-            //Percorre os caminhoes
-//            for (int i = 1; i < VariaveisGlobais.QUANT_CAMINHOES; i++){
-//                int indiceEspaco = linha.indexOf(' ');
-//                int tamanho = Integer.valueOf(linha.substring(0,indiceEspaco));
-//                int valor = Integer.valueOf(linha.substring(indiceEspaco+1));
-//                String nome = "Caminhao" + i;
-//                Caminhao cAux = new Caminhao(tamanho, valor, nome);
-//                VariaveisGlobais.listaCaminhoes.add(cAux);
-//            }
 
         }
 
