@@ -17,7 +17,7 @@ public class Main {
 
             for(int i = 1; (st=br.readLine()) != null; i++){
 
-                
+
 
             }
 
