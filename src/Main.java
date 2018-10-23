@@ -6,7 +6,8 @@ import java.io.IOException;
 public class Main {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        File arquivoDeEntrada = new File("input.txt");
+        ReadFile(arquivoDeEntrada);
     }
 
     public static void ReadFile(File file) {
@@ -17,7 +18,7 @@ public class Main {
 
             for(int i = 1; (st=br.readLine()) != null; i++){
 
-
+                System.out.println(st);
 
             }
 
