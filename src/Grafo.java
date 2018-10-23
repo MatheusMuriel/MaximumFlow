@@ -35,8 +35,6 @@ public class Grafo {
         return saida;
     }
 
-
-
     List<Vertice> vertices;
     List<Aresta>  arestas;
     public class Vertice{

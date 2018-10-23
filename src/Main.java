@@ -27,18 +27,23 @@ public class Main {
             Grafo.Vertice v = VariaveisGlobais.GRAFO.adicionaVertice(i.getNome(), i.getCarga(), i.getDinheiro(), "cliente");
         }
         for (Caminhao i : listaCaminhoes){
-            Grafo.Vertice v = VariaveisGlobais.GRAFO.adicionaVertice(i.getNome(), i.tamanho, i.getValor(), "caminhao");
+            Grafo.Vertice v = VariaveisGlobais.GRAFO.adicionaVertice(i.getNome(), i.getTamanho(), i.getValor(), "caminhao");
         }
         geraLigacoes(VariaveisGlobais.GRAFO);
+        System.out.println(VariaveisGlobais.GRAFO.toString());
     }
 
     private static void geraLigacoes(Grafo grafo) {
 
-        System.out.println(grafo.vertices);
         for (Grafo.Vertice v1 : grafo.vertices){
 
             for (Grafo.Vertice v2 : grafo.vertices){
-                
+
+                if (v2.tipo != v1.tipo){ //para não linkar cliente com cliente
+                    if (v2.peso >= v1.peso && v2.valor <= v1.valor){
+                        Grafo.Aresta a = grafo.adicionaAresta(v1, v2);
+                    }
+                }
             }
         }
 
