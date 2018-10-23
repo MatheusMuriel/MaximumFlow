@@ -8,4 +8,6 @@ public class VariaveisGlobais {
     public static ArrayList<Cliente> listaClientes;
     public static ArrayList<Caminhao> listaCaminhoes;
 
+    public static Grafo GRAFO;
+
 }

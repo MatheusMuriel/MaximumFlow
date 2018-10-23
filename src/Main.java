@@ -3,13 +3,36 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 
 public class Main {
 
     public static void main(String[] args) {
         File arquivoDeEntrada = new File("input.txt");
         ReadFile(arquivoDeEntrada);
+
+        geraGrafo(VariaveisGlobais.listaClientes,
+                VariaveisGlobais.listaCaminhoes);
+
+        VariaveisGlobais.GRAFO.toString();
+
     }
+
+    private static void geraGrafo(ArrayList<Cliente> listaClientes,
+                                  ArrayList<Caminhao> listaCaminhoes){
+
+        VariaveisGlobais.GRAFO = new Grafo();
+
+        for (Cliente i : listaClientes){
+            Grafo.Vertice v = VariaveisGlobais.GRAFO.adicionaVertice(i.getNome(), i.getCarga(), i.getDinheiro());
+        }
+        for (Caminhao i : listaCaminhoes){
+            Grafo.Vertice v = VariaveisGlobais.GRAFO.adicionaVertice(i.getNome(), i.tamanho, i.getValor());
+        }
+
+    }
+
+
 
     /**
      * Metodo que le linha por linha os dados de um arquivo
@@ -74,5 +97,7 @@ public class Main {
         }
 
     }
+
+
 
 }
